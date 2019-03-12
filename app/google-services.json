@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "555990511326",
+    "firebase_url": "https://myshop-fe230.firebaseio.com",
+    "project_id": "myshop-fe230",
+    "storage_bucket": "myshop-fe230.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555990511326:android:24ff82044c84f6e7",
+        "android_client_info": {
+          "package_name": "com.creaginetech.myshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555990511326-95gkrngtl1qontpceesi95v29t1tdesi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.creaginetech.myshop",
+            "certificate_hash": "5b42616c15d6bd25ee215c741eb5def239c5837a"
+          }
+        },
+        {
+          "client_id": "555990511326-a9mjhakh1bc5iajitcdsl2lqkmaukioj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_WL6ZXvjrKUdVysWZf587MIHSd5Z6vxE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555990511326-a9mjhakh1bc5iajitcdsl2lqkmaukioj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
