@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.creaginetech.myshop.models.User;
@@ -22,6 +24,8 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
 
     private EditText edtShopName,edtShopAddress,edtShopEmail,edtShopPhone;
     private Button btnUpdateProfile;
+    private Toolbar toolbar;
+    private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
     private FirebaseUser mFirebaseUser;
@@ -38,6 +42,15 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
 
         widgets();
 
+        toolbar.setNavigationIcon(R.drawable.back_icon);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AccountActivity.this,MainActivity.class));
+                finish();
+            }
+        });
+
         btnUpdateProfile.setOnClickListener(this);
 
     }
@@ -48,6 +61,8 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
         edtShopEmail = findViewById(R.id.edtShopEmail);
         edtShopPhone = findViewById(R.id.edtShopPhone);
         btnUpdateProfile = findViewById(R.id.buttonUpdateProfile);
+        toolbar = findViewById(R.id.accountToolbar);
+        progressBar = findViewById(R.id.progressBarAccount);
 
     }
 
@@ -90,6 +105,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
     protected void onStart() {
         super.onStart();
 
+        progressBar.setVisibility(View.VISIBLE);
         mDatabaseReference.child(mFirebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -99,6 +115,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
                 edtShopAddress.setText(user.getAddress());
                 edtShopEmail.setText(user.getEmail());
                 edtShopPhone.setText(user.getPhone());
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
