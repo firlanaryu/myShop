@@ -99,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private void writeNewUser(String uid,String username,String email) {
         User user = new User(username,email);
-        mDatabaseReference.child("users").child(uid).setValue(user);
+        mDatabaseReference.child("shops").child(uid).setValue(user);
     }
 
     private String usernameFromEmail(String email) {

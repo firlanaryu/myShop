@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         mAuth = FirebaseAuth.getInstance();
         firebaseUser = mAuth.getCurrentUser();
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference("users");
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference("shops");
 
         widgets();
 

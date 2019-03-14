@@ -38,7 +38,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
 
         mAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mAuth.getCurrentUser();
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference("users");
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference("shops");
 
         widgets();
 
