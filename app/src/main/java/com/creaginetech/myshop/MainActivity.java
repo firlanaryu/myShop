@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FirebaseAuth mAuth;
     private FirebaseUser firebaseUser;
     private DatabaseReference mDatabaseReference;
-    private ValueEventListener mValueEventListener;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +55,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setSupportActionBar(toolbarMain);
 
+        //NAVIGATION DRAWER
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbarMain,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Navigation drawer header retrieve data user from firebase
         mDatabaseReference.child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         txtHeaderEmail = headerView.findViewById(R.id.txtHeaderEmail);
     }
 
+    //[START Navigation item selected]
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+    //[END navigation item selected]
 
     @Override
     protected void onStart() {

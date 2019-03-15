@@ -49,7 +49,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onPostResume() {
         super.onPostResume();
-        waitHandler.postDelayed(waitCallback,2000);
+        waitHandler.postDelayed(waitCallback,2000); //2000 = 2 SECOND loading
     }
 
     @Override

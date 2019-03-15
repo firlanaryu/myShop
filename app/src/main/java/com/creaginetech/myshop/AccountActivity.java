@@ -42,6 +42,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
 
         widgets();
 
+        //Toolbar back button
         toolbar.setNavigationIcon(R.drawable.back_icon);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +75,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    //[START update user]
     private void updateUser() {
         startUpdateUser();
 
@@ -100,7 +102,9 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
 
         mDatabaseReference.child(userId).setValue(user);
     }
+    //[END update user]
 
+    //ACCOUNT ACTIVITY START TO LISTEN AND RETRIEVE DATA USER
     @Override
     protected void onStart() {
         super.onStart();

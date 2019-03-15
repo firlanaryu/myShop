@@ -69,6 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
     }
 
+    // [START Sign in]
     private void signIn() {
         Log.d(TAG,"SignIn ");
         if (!validateForm()){
@@ -109,6 +110,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         finish();
     }
 
+    //validation when empty
     private boolean validateForm() {
 
         boolean result = true;
@@ -128,5 +130,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         return result;
     }
-
+    //[END Sign in]
 }

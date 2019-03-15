@@ -19,6 +19,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
         widgets();
 
+        //Toolbar back button
         categoryToolbar.setNavigationIcon(R.drawable.back_icon);
         categoryToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

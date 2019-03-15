@@ -58,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    // [Start register user]
     private void registerUser() {
         Log.d(TAG,"SignUp");
         if (!validateForm()){
@@ -102,6 +103,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mDatabaseReference.child("shops").child(uid).setValue(user);
     }
 
+    //create username from email
     private String usernameFromEmail(String email) {
 
         if (email.contains("@")){
@@ -111,6 +113,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
     }
+    //[END register user]
 
     private boolean validateForm() {
 

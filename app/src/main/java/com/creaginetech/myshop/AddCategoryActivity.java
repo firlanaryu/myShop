@@ -39,6 +39,7 @@ public class AddCategoryActivity extends AppCompatActivity implements View.OnCli
         
         widgets();
 
+        //Toolbar back button
         addCategoryToolbar.setNavigationIcon(R.drawable.back_icon);
         addCategoryToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +67,7 @@ public class AddCategoryActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
+    //[START SAVE NEW CATEGORY]
     private void saveNewCategory() {
         String categoryName = edtNameCategory.getText().toString();
 
@@ -73,6 +75,7 @@ public class AddCategoryActivity extends AppCompatActivity implements View.OnCli
 
         Category category = new Category(categoryName,mFirebaseUser.getUid());
 
+        //save category data to child "categorys"
         mDatabaseReference.child("categorys").child(catId).setValue(category).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
@@ -87,4 +90,5 @@ public class AddCategoryActivity extends AppCompatActivity implements View.OnCli
             }
         });
     }
+    //[END SAVE NEW CATEGORY]
 }
